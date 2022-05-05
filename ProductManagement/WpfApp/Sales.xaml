@@ -1,0 +1,108 @@
+﻿<Window x:Class="WpfApp.Sales"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp"
+        mc:Ignorable="d"
+        Title="Sales" Height="632" Width="1138" Loaded="Window_Loaded">
+    <Grid Margin="0,0,0,-6">
+        <Rectangle Fill="Tomato"/>
+        <Label Content="SALES" HorizontalAlignment="Left" Margin="461,35,0,0" VerticalAlignment="Top" FontSize="40px"/>
+        <DataGrid  Margin="707,103,0,292" AlternatingRowBackground="HotPink" HorizontalAlignment="Left" Width="387" DataGridCell.Selected="DataGrid_Selected" Name="dataGridView">
+            <DataGrid.Resources>
+                <Style TargetType="{x:Type DataGridColumnHeader}">
+                    <Setter Property="Background" Value="HotPink">
+
+                    </Setter>
+                </Style>
+            </DataGrid.Resources>
+
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID" Width="50" Binding="{Binding Id}"/>
+                <DataGridTextColumn Header="Name" Width="50" Binding="{Binding Name}"/>
+                <DataGridTextColumn Header="Price" Width="50" Binding="{Binding Price}"/>
+                <DataGridTextColumn Header="Code" Width="50" Binding="{Binding Code}"/>
+                <DataGridTextColumn Header="Description" Width="80" Binding="{Binding Description}"/>
+                <DataGridTextColumn Header="Count" Width="60" Binding="{Binding Count}"/>
+                <DataGridTextColumn Header="Rate" Width="*" Binding="{Binding TaxRate}"/>
+
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <Label Content="Name" HorizontalAlignment="Left" Margin="83,115,0,0" VerticalAlignment="Top" FontSize="20px"/>
+        <TextBox HorizontalAlignment="Left" Margin="154,125,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="146" Height="25" Name="txtName"/>
+        <Label Content="Price" HorizontalAlignment="Left" Margin="91,155,0,0" VerticalAlignment="Top" FontSize="20px"/>
+        <TextBox HorizontalAlignment="Left" Margin="154,165,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="146" Height="25" Name="txtPrice"/>
+        <Label Content="Description" HorizontalAlignment="Left" Margin="37,228,0,0" VerticalAlignment="Top" FontSize="20px"/>
+        <TextBox HorizontalAlignment="Left" Margin="154,241,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="146" Height="25" Name="txtDescription"/>
+        <TextBox HorizontalAlignment="Left" Margin="154,289,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="146" Height="25" Name="txtCount"/>
+        <Label Content="Count" HorizontalAlignment="Left" Margin="81,277,0,0" VerticalAlignment="Top" FontSize="20px"/>
+        <Button Content="PURCHASE" Background="CadetBlue" HorizontalAlignment="Left" Margin="172,391,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.762,2.181" Width="132" Height="45" FontSize="20px" Name="btnPurchase" Click="btnPurchase_Click"/>
+        <TextBox HorizontalAlignment="Left" Margin="702,356,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="202" Height="29" Name="txtBarcode" KeyDown="txtBarcode_KeyDown"/>
+        <Button Content="7" HorizontalAlignment="Left" Margin="707,439,0,0" VerticalAlignment="Top" RenderTransformOrigin="2.882,1.174" FontSize="20px" Width="58" Height="33" Click="Button_Click_1"/>
+        <Button Content="8" HorizontalAlignment="Left" Margin="788,439,0,0" VerticalAlignment="Top" RenderTransformOrigin="2.882,1.174" FontSize="20px" Width="46" Click="Button_Click_1"/>
+        <Button Content="9" HorizontalAlignment="Left" Margin="858,439,0,0" VerticalAlignment="Top" RenderTransformOrigin="2.882,1.174" FontSize="20px" Width="46" Click="Button_Click_1"/>
+        <Button HorizontalAlignment="Left" Margin="725,479,0,0" VerticalAlignment="Top" RenderTransformOrigin="2.882,1.174" Width="6" />
+        <Button HorizontalAlignment="Left" Margin="725,519,0,0" VerticalAlignment="Top" RenderTransformOrigin="2.882,1.174" Width="6"/>
+        <Button Content="5" HorizontalAlignment="Left" Margin="788,479,0,0" VerticalAlignment="Top" RenderTransformOrigin="2.882,1.174" FontSize="20px" Width="49" Click="Button_Click_1"/>
+        <Button Content="6" HorizontalAlignment="Left" Margin="858,479,0,0" VerticalAlignment="Top" RenderTransformOrigin="2.882,1.174" FontSize="20px" Width="46" Click="Button_Click_1"/>
+        <Button Content="4" HorizontalAlignment="Left" Margin="707,479,0,0" VerticalAlignment="Top" RenderTransformOrigin="2.882,1.174" FontSize="20px" Width="58" Click="Button_Click_1"/>
+        <Button HorizontalAlignment="Left" Margin="725,519,0,0" VerticalAlignment="Top" RenderTransformOrigin="2.882,1.174" Width="6"/>
+        <Button Content="2" HorizontalAlignment="Left" Margin="788,519,0,0" VerticalAlignment="Top" RenderTransformOrigin="2.882,1.174" FontSize="20px" Width="49" Click="Button_Click_1"/>
+        <Button Content="3" HorizontalAlignment="Left" Margin="858,519,0,0" VerticalAlignment="Top" RenderTransformOrigin="2.882,1.174" FontSize="20px" Width="46" Click="Button_Click_1"/>
+        <Button Content="1" HorizontalAlignment="Left" Margin="707,517,0,0" VerticalAlignment="Top" RenderTransformOrigin="2.882,1.174" FontSize="20px" Width="58" Click="Button_Click_1"/>
+        <Button HorizontalAlignment="Left" Margin="725,569,0,0" VerticalAlignment="Top" RenderTransformOrigin="2.882,1.174" Width="6"/>
+        <Button HorizontalAlignment="Left" Margin="725,569,0,0" VerticalAlignment="Top" RenderTransformOrigin="2.882,1.174" Width="6"/>
+        <Button Content="Result" HorizontalAlignment="Left" Margin="788,569,0,0" VerticalAlignment="Top" RenderTransformOrigin="2.882,1.174" FontSize="20px" Width="116" Background="ForestGreen" Name="Result" Click="Result_Click"/>
+        <Button Content="0" HorizontalAlignment="Left" Margin="707,567,0,0" VerticalAlignment="Top" RenderTransformOrigin="2.882,1.174" FontSize="20px" Width="58" Click="Button_Click_1"/>
+        <Button Content="Del" HorizontalAlignment="Left" Margin="707,395,0,0" VerticalAlignment="Top" RenderTransformOrigin="2.882,1.174" FontSize="20px" Width="58" Height="33" Background="red" Name="Del" Click="Del_Click"/>
+        <Button Content="R" HorizontalAlignment="Left" Margin="788,395,0,0" VerticalAlignment="Top" RenderTransformOrigin="2.882,1.174" FontSize="20px" Width="46" Name="R" Click="R_Click"  />
+        <Button Content="Off" HorizontalAlignment="Left" Margin="858,395,0,0" VerticalAlignment="Top" RenderTransformOrigin="2.882,1.174" FontSize="20px" Width="46" Name="Off" Click="Off_Click"/>
+        <Label Content="Total: " HorizontalAlignment="Left" Margin="175,542,0,0" VerticalAlignment="Top" FontSize="30"/>
+        <TextBox HorizontalAlignment="Left" Margin="263,559,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Name="txtTotal" Height="22"/>
+        <TextBox HorizontalAlignment="Left" Margin="154,334,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="146" Height="25" Name="txtRate"/>
+        <Label Content="Rate" HorizontalAlignment="Left" Margin="93,326,0,0" VerticalAlignment="Top" FontSize="20px"/>
+        <Label Content="Tax Amount: " HorizontalAlignment="Left" Margin="81,500,0,0" VerticalAlignment="Top" FontSize="30"/>
+        <TextBox HorizontalAlignment="Left" Margin="263,513,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Name="txtTax" Height="22"/>
+        <Label Content="Sub Total: " HorizontalAlignment="Left" Margin="111,456,0,0" VerticalAlignment="Top" FontSize="30"/>
+        <TextBox HorizontalAlignment="Left" Margin="261,473,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Name="txtSubTotal" Height="22"/>
+        <Label Content="Code" HorizontalAlignment="Left" Margin="91,191,0,0" VerticalAlignment="Top" FontSize="20px"/>
+        <TextBox HorizontalAlignment="Left" Margin="154,201,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="146" Height="25" Name="txtCode"/>
+        <Button Content="ADD BASKET" Background="Bisque" HorizontalAlignment="Left" Margin="362,391,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.762,2.181" Width="132" Height="45" FontSize="20px" Name="btnBasket" Click="btnBasket_Click"/>
+        <Label Content="Id" HorizontalAlignment="Left" Margin="115,79,0,0" VerticalAlignment="Top" FontSize="20px"/>
+        <TextBox HorizontalAlignment="Left" Margin="154,89,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="146" Height="25" Name="txtId"/>
+        <DataGrid  Margin="336,117,484,321" Name="BasketDataGrid" DataGridCell.Selected="BasketDataGrid_Selected">
+            <DataGrid.Resources>
+                <Style TargetType="{x:Type DataGridColumnHeader}">
+                    <Setter Property="Background" Value="PaleGoldenrod">
+
+                    </Setter>
+                </Style>
+            </DataGrid.Resources>
+
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID" Width="50" Binding="{Binding Id}"/>
+                <DataGridTextColumn Header="UserName" Width="80" Binding="{Binding UserID}"/>
+                <DataGridTextColumn Header="ProductID" Width="80" Binding="{Binding ProductId}"/>
+                <DataGridTextColumn Header="Count" Width="60" Binding="{Binding Count}"/>
+
+                <DataGridTemplateColumn Header="Delete" Width="*">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button x:Name="Delete" Click="Delete_Click" Background="Red">
+
+                            </Button>
+
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button Content="PURCHASE" Background="CadetBlue" HorizontalAlignment="Left" Margin="334,324,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.762,2.181" Width="132" Height="45" FontSize="20px" Name="basketPurchase" Click="basketPurchase_Click"/>
+        <Label Content="Total: " HorizontalAlignment="Left" Margin="472,321,0,0" VerticalAlignment="Top" FontSize="30"/>
+        <TextBox HorizontalAlignment="Left" Margin="560,336,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Name="txtBasketTotal" Height="22" RenderTransformOrigin="0.738,-0.425"/>
+
+    </Grid>
+</Window>

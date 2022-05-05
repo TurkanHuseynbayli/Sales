@@ -1,0 +1,42 @@
+﻿<Window x:Class="WpfApp.Basket"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp"
+        mc:Ignorable="d"
+        Title="Basket" Height="596" Width="683" >
+    <Grid Margin="0,10,10,12">
+        <Rectangle Fill="Wheat"/>
+        <Label Content="BASKET" HorizontalAlignment="Center" Margin="0,40,0,0" VerticalAlignment="Top" FontSize="40"/>
+        <DataGrid  Margin="0,168,0,0" Name="BasketView" AlternatingRowBackground="PaleGoldenrod" RenderTransformOrigin="0.714,0.512" HorizontalAlignment="Center" Width="341" Height="163" VerticalAlignment="Top">
+            <DataGrid.Resources>
+                <Style TargetType="{x:Type DataGridColumnHeader}">
+                    <Setter Property="Background" Value="PaleGoldenrod">
+
+                    </Setter>
+                </Style>
+            </DataGrid.Resources>
+
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID" Width="50" Binding="{Binding Id}"/>
+                <DataGridTextColumn Header="UserName" Width="80" Binding="{Binding UserID}"/>
+                <DataGridTextColumn Header="ProductID" Width="80" Binding="{Binding ProductId}"/>
+                <DataGridTextColumn Header="Count" Width="60" Binding="{Binding Count}"/>
+
+                <DataGridTemplateColumn Header="Delete" Width="*">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button x:Name="Delete" Click="Delete_Click" Background="Red">
+
+                            </Button>
+
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
+            </DataGrid.Columns>
+        </DataGrid>
+
+    </Grid>
+</Window>

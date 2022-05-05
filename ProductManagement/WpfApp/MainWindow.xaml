@@ -1,0 +1,78 @@
+﻿<Window x:Class="WpfApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp"
+        mc:Ignorable="d"
+        Title="PRODUCT" Height="450" Width="800" Loaded="Window_Loaded">
+    <Grid Margin="0,0,0,-161">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="319*"/>
+            <ColumnDefinition Width="234*"/>
+            <ColumnDefinition Width="247*"/>
+        </Grid.ColumnDefinitions>
+        <Label Content="PRODUCT" HorizontalAlignment="Left" Margin="49,10,0,0" VerticalAlignment="Top" RenderTransformOrigin="3.136,0.922" Grid.Column="1"/>
+        <Label Content="Price" HorizontalAlignment="Left" Margin="38,134,0,0" VerticalAlignment="Top" RenderTransformOrigin="3.136,0.922"/>
+        <Label Content="Description" HorizontalAlignment="Left" Margin="38,178,0,0" VerticalAlignment="Top" RenderTransformOrigin="3.136,0.922"/>
+        <Label Content="Name" HorizontalAlignment="Left" Margin="38,88,0,0" VerticalAlignment="Top" RenderTransformOrigin="3.136,0.922"/>
+        <TextBox HorizontalAlignment="Left" Margin="166,101,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Name="txtName"/>
+        <TextBox HorizontalAlignment="Left" Margin="166,147,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Name="txtPrice"/>
+        <TextBox HorizontalAlignment="Left" Margin="166,186,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Name="txtDesc"/>
+        <Button Content="ADD" HorizontalAlignment="Left" Margin="143,336,0,0" VerticalAlignment="Top" Name="btnAdd" Click="btnAdd_Click" RenderTransformOrigin="0.5,0.5">
+            <Button.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="1.901"/>
+                    <TranslateTransform X="0.072" Y="3.809"/>
+                </TransformGroup>
+            </Button.RenderTransform>
+        </Button>
+        <Button Content="UPDATE" Margin="207,342,57,0" VerticalAlignment="Top" RenderTransformOrigin="3.251,1.044" Name="btnUpdate" Click="btnUpdate_Click" Height="23">
+            <Button.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-0.55"/>
+                    <TranslateTransform X="0.326" Y="-4.51"/>
+                </TransformGroup>
+            </Button.RenderTransform>
+        </Button>
+        <Button Content="DELETE" HorizontalAlignment="Left" Margin="295,343,0,0" VerticalAlignment="Top" RenderTransformOrigin="5.371,0.984" Name="btnDelete" Click="btnDelete_Click" Grid.ColumnSpan="2" Height="22" Width="43">
+            <Button.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-0.917"/>
+                    <TranslateTransform X="0.15" Y="-11.407"/>
+                </TransformGroup>
+            </Button.RenderTransform>
+        </Button>
+        <DataGrid  Margin="81,56,38,189" Name="dataGridView" Grid.Column="1" Grid.ColumnSpan="2" DataGridCell.Selected="dataGridView_Selected">
+
+            <DataGrid.Resources>
+                <Style TargetType="{x:Type DataGridColumnHeader}">
+                    <Setter Property="Background" Value="Turquoise"></Setter>
+                </Style>
+            </DataGrid.Resources>
+
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID" Width="40" Binding="{Binding Id}"/>
+                <DataGridTextColumn Header="Name" Width="50" Binding="{Binding Name}"/>
+                <DataGridTextColumn Header="Price" Width="50" Binding="{Binding Price}"/>
+                <DataGridTextColumn Header="Description" Width="80" Binding="{Binding Description}"/>
+                <DataGridTextColumn Header="Count" Width="60" Binding="{Binding Count}"/>
+                <DataGridTextColumn Header="Status" Width="*" Binding="{Binding Status}"/>
+
+
+            </DataGrid.Columns>
+        </DataGrid>
+        <Label Content="Id" HorizontalAlignment="Left" Margin="38,43,0,0" VerticalAlignment="Top" RenderTransformOrigin="3.136,0.922"/>
+        <TextBox HorizontalAlignment="Left" Margin="166,56,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Name="txtId"/>
+        <Label Content="Count" HorizontalAlignment="Left" Margin="38,218,0,0" VerticalAlignment="Top" RenderTransformOrigin="3.136,0.922"/>
+        <TextBox HorizontalAlignment="Left" Margin="166,226,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Name="txtCount"/>
+        <Label Content="Status" HorizontalAlignment="Left" Margin="38,271,0,0" VerticalAlignment="Top" RenderTransformOrigin="3.136,0.922"/>
+        <TextBox HorizontalAlignment="Left" Margin="166,271,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Name="txtStatus"/>
+    </Grid>
+</Window>
