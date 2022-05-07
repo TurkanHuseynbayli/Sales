@@ -409,7 +409,7 @@ namespace WpfApp
                 smtp.Host = "smtp.gmail.com";
                 smtp.EnableSsl = true;
                 smtp.UseDefaultCredentials = true;
-                smtp.Credentials = new NetworkCredential("turkanhuseynbayli98@gmail.com", "parol");
+                smtp.Credentials = new NetworkCredential("turkanhuseynbayli98@gmail.com", "TurkanSah1998@");
                 smtp.DeliveryMethod = SmtpDeliveryMethod.Network;
                 smtp.Send(message);
             }
